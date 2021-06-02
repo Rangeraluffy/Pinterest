@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pinboard</title>
+    <%= csrf_meta_tags %>
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,600i,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application' %>
+
+  </head>
+
+  <body>
+
+    <header class="banner">
+      <div class="global-header">
+        <div class="content-wrapper">
+          <div class="logo">
+            <a class="logo" href="/"><span>Pin</span>Terest</a>
+          </div>
+          <%= render partial: 'search'%>
+          <nav>
+            <ul class="global-nav bare-list">
+              <% if @user.present? && @user.valid? %>
+                <li><%= link_to  "My Pins", user_images_path(@user) %></li>
+              <% else %>
+                <li><%= link_to  "Login/Register", new_user_path %></li>
+              <% end %>
+              <li><%= link_to  "All the pins", pins_path %></li>
+              <li><%= link_to  "About", "/about.html" %></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <%= yield %>
+
+<footer class="footer">
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="footer-col">
+        <h4>2021 &copy;</h4>
+        <ul>
+          <li>Alexandre Marolleau</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="footer-col">
+        <h4>Best idea</h4>
+        <ul>
+          <li><a href="#">Pin</a></li>
+          <li><a href="#">Idea</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="footer-col">
+        <h4>follow us</h4>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</footer>
+
+  </body>
+</html>
