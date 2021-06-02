@@ -1,0 +1,17 @@
+<%= render partial: 'pin_image', locals: { image_url: pin.image_url,
+                                          alt: "image art"} %>
+<%= link_to pin_path(pin), class: 'card__thumb' do %>
+  <div class="card__intro card--show">
+    <h3 class="card__title"> <%= pin.title %> </h3>
+    <h5 class="card__tag"><%= pin.tag %></h5>
+  </div>
+<% end %>
+<div class="card__form">
+  <div class="card__footer card--show">
+    <%= link_to edit_pin_path(pin), class: 'btn btn--cta' do %>
+      <svg class="icon icon--cta" height="20" viewBox="0 0 24 24" width="20">
+        <use xlink:href="<%= asset_url("icons/icons-defs.svg" + "#edit") %>"></use>
+      </svg>
+    <% end %>
+  </div>
+</div>

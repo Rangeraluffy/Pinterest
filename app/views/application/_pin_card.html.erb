@@ -1,0 +1,34 @@
+<%= render partial: 'pin_image', locals: { image_url: pin.image_url,
+                                          alt: "image art"} %>
+<%= link_to pin_path(pin), class: 'card__thumb' do %>
+  <div class="card__intro card--show">
+    <h3 class="card__title"> <%= pin.title %> </h3>
+    <h5 class="card__tag"><%= pin.tag %></h5>
+  </div>
+<% end %>
+<div class="card__form">
+  <% if @user.nil? %>
+    <div class=" card__footer card--show">
+      <%= link_to(new_user_path, class: 'btn btn--cta') do %>
+        <svg class="icon icon--cta" height="20" viewBox="0 0 24 24" width="20">
+            <use xlink:href="<%= asset_url("icons/icons-defs.svg" + "#pin") %>"></use>
+          </svg>
+      <% end %>
+    </div>
+  <% else %>
+    <%= form_tag user_images_path(pin), class: 'card__footer card--show' do%>
+      <%= hidden_field_tag(:pin_id, pin.id) %>
+      <%= button_tag(class: 'btn btn--cta', type: 'submit', disabled: @user.images.exists?(pin.id)) do %>
+        <% if @user.images.exists?(pin.id) %>
+          <svg class="icon icon--liked" height="20" viewBox="0 0 24 24" width="20">
+            <use xlink:href="<%= asset_url("icons/icons-defs.svg" + "#heart") %>"></use>
+          </svg>
+        <% else %>
+          <svg class="icon icon--cta" height="20" viewBox="0 0 24 24" width="20">
+            <use xlink:href="<%= asset_url("icons/icons-defs.svg" + "#pin") %>"></use>
+          </svg>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

@@ -1,0 +1,12 @@
+<%= form_tag(pins_path, class: 'search search--cta', method: 'GET') do %>
+  <label for="global-search" class="search__label sr-only">Search</label>
+  <div class="search__row">
+    <%= text_field_tag 'q', nil, class: 'search__field', placeholder: 'E.G Japan'%>
+    <%= button_tag class: 'btn btn--cta', name: nil do %>
+      <svg class="icon icon--cta" height="20" viewBox="0 0 24 24" width="20">
+        <use xlink:href="<%= asset_url("icons/icons-defs.svg" + "#search") %>"></use>
+      </svg>
+      Search
+    <% end %>
+  </div>
+<% end %>
