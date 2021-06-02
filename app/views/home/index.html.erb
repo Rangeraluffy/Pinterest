@@ -1,0 +1,24 @@
+    <main class="main">
+
+      <div class="masthead">
+        <div class="content-wrapper">
+          <div class="masthead__text">
+            <h1 class="title-body" data-text="Found">Found your Idea</h1>
+            <h2 class="sub-title-body">This site allows you to create an account to select different ideas proposed by users to publish them as well as pinned for the best ideas.</h2>
+            <h3 class="title-bottom-body" data-text="Found">Latest idea pin by User's</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="main__content">
+        <div class="content-wrapper">
+          <ul class="bare-list cards">
+            <% @pins.each do |pin| %>
+              <li class="card">
+                <%= render partial: 'pin_card', locals: { pin: pin } %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </main>
