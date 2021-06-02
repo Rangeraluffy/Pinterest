@@ -1,0 +1,29 @@
+  <main class="main">
+        <% if @pins.any? %>
+        <% else %>
+        <% end %>
+    <div class="main__header">
+      <div class="content-wrapper">
+        <% if @search_term  %>
+          <h1>Results for "<%= @search_term %>"</h1>
+        <% else %>
+          <h1 class="title-body" data-text="Found">All pins</h1>
+        <% end %>
+      </div>
+    </div>
+    <div class="main__content">
+      <div class="content-wrapper">
+        <% if @pins.any? %>
+          <ul class="bare-list cards">
+            <% @pins.each do |pin| %>
+              <li class="card">
+                <%= render partial: 'pin_card', locals: { pin: pin } %>
+              </li>
+            <% end %>
+          </ul>
+        <% else %>
+          <h1 class="sub-title-body">No pins found</h1>
+        <% end %>
+      </div>
+</div>
+    </main>

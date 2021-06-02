@@ -1,0 +1,109 @@
+
+  <main class="main">
+    <div class="masthead">
+      <div class="content-wrapper">
+        <div class="masthead__text">
+        </div>
+      </div>
+    </div>
+    <div class="main__header">
+      <div class="content-wrapper">
+        <div class="goal">
+          <div class="goal__img">
+            <%= render partial: 'pin_image', locals: { image_url: @pin.image_url,
+                                          alt: "image art"} %>
+          </div>
+          <div class="goal__content">
+            <div class="goal__owner">
+              <%= image_tag('avatar.png', alt: 'Default avatar', class: 'avatar' ) %>
+              <span>Created by <a href="#">John Doe</a></span>
+            </div>
+            <div class="goal__title">
+              <h1 class="beta"> <%= @pin.title %> </h1>
+            </div>
+            <div class="goal__buttons">
+              <% if @user.nil? %>
+                <%= link_to(new_user_path, class: 'btn btn--icon btn--cta goal__btn') do %>
+                  <svg class="icon icon--cta" height="20" viewBox="0 0 24 24" width="20">
+                      <use xlink:href="<%= asset_url("icons/icons-defs.svg" + "#pin") %>"></use>
+                    </svg>
+                <% end %>
+              <% else %>
+                <%= form_tag user_images_path(@pin), class: 'goal__btn' do%>
+                  <%= hidden_field_tag(:pin_id, @pin.id) %>
+                  <%= button_tag(class: 'btn btn--icon btn--cta', type: 'submit', disabled: @user.images.exists?(@pin.id)) do %>
+                    <% if @user.images.exists?(@pin.id) %>
+                      <svg class="icon icon--liked" height="20" viewBox="0 0 24 24" width="20">
+                        <use xlink:href="<%= asset_url("icons/icons-defs.svg" + "#heart") %>"></use>
+                      </svg>
+                    <% else %>
+                      <svg class="icon icon--cta" height="20" viewBox="0 0 24 24" width="20">
+                        <use xlink:href="<%= asset_url("icons/icons-defs.svg" + "#pin") %>"></use>
+                      </svg>
+                    <% end %>
+                  <% end %>
+                <% end %>
+                <%= link_to edit_pin_path(@pin), class: 'btn btn--icon btn--cta goal__btn' do %>
+                  <svg class="icon icon--cta" height="20" viewBox="0 0 24 24" width="20">
+                    <use xlink:href="<%= asset_url("icons/icons-defs.svg" + "#edit") %>"></use>
+                  </svg>
+                <% end %>
+              <% end %>
+            </div>
+            <div class="goal__description">
+              <p><%= @pin.tag %></p>
+            </div>
+            <div class="goal__stats">
+              <div class="stats__created">
+                <span>Created on <time datetime="<%= @pin.created_at %>"> <%= @pin.created_at.strftime("%d %b '%y") %></time></span>
+              </div>
+              <div class="stats__doing">
+                <span><%= @pin.users.length %> loving this</span>
+              </div>
+              <div class="stats__comments"><a href="#discussion"><%= @pin.comments.count %> comments</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main__content">
+      <div class="content-wrapper">
+        <div id="discussion" class="discussion">
+          <div class="comments comments__title">
+            <h2 class="gamma">Discussion</h2>
+            <span class="comments__number epsilon"> <%= @pin.comments.count %> comments</span>
+          </div>
+          <% if @user.present? %>
+            <div class="comments comments--add">
+              <div class="comments__avatar">
+                <%= image_tag('avatar.png', alt: 'Default avatar', class: 'avatar' ) %>
+              </div>
+              <div class="comments__text">
+                <%= form_for([@pin, @comment], html: { class: 'input input--textarea'}) do |f| %>
+                  <%= f.label :body, 'Add a comment', class: 'input__label' %>
+                  <%= f.text_area :body, :required => true, class: 'input__field'  %>
+                  <%= f.submit 'Post', class: 'btn btn--cta' %>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+          <ul class="comments__listing bare-list">
+            <% @pin.comments.order(created_at: :desc).each do |comment| %>
+              <li class="comments comments--display">
+                <div class="comments__avatar">
+                  <%= image_tag('avatar.png', alt: 'Default avatar', class: 'avatar' ) %>
+                </div>
+                <div class="comments__text">
+                  <div class="comments__user">
+                    <span class="user__name"><a href="#">John Doe</a> <span class="comments__time"><time datetime="<%= comment.created_at %>"> <%= comment.created_at.strftime("%d %b '%y") %></time></span>
+                    </span>
+                  </div>
+                  <p> <%= comment.body %> </p>
+                </div>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
