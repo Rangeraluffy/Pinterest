@@ -1,0 +1,95 @@
+/* ==============================
+* NAVIGATION
+================================= */
+
+/* Global Header Navigation */
+.global-nav {
+  float: right;
+  display: flex;
+
+  > li {
+    float: left;
+    list-style-type: none;
+    margin: 0 0 0 1rem;
+    padding: 1rem 0;
+  }
+
+  a {
+    color:#212529;
+
+    &:hover, &:focus {
+      color: #1f97bb;
+    }
+  }
+}
+
+/* Masthead Navigation */
+.masthead__nav {
+  margin-top: 2rem;
+  padding: 0;
+  align-self: flex-start;
+
+  @include tablet {
+    float: left;
+  }
+
+  li {
+    @include tablet {
+      display: inline-block;
+      padding: 0;
+    }
+  }
+
+  a {
+    margin: 2rem 1rem -1px 0;
+
+    @include tablet {
+      display: block;
+      margin: 0 1rem -1px 0;
+      padding: 0 0.5rem 2.5rem;
+    }
+
+    &:hover, &:focus {
+      border-bottom: 1px solid #212529;
+    }
+  }
+
+  .current  {
+    a {
+      color: #212529;
+      border-bottom: 1px solid #212529;
+    }
+  }
+}
+
+/* Footer Navigation */
+.nav-footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0;
+
+  .logo {
+    padding: 1rem 1rem 1rem 0 ;
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 1rem;
+  }
+
+  li {
+    padding-right: 1rem;
+    white-space: nowrap;
+  }
+
+  a {
+    color: #1f97bb;
+
+    &:hover, &:focus {
+      color: red;
+    }
+  }
+}
