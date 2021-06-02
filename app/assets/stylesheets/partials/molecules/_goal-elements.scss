@@ -1,0 +1,92 @@
+/* ==================
+* GOAL ELEMENTS
+===================== */
+
+/* OWNER */
+.goal__owner {
+  display: flex;
+  align-items: center;
+  &::after {
+    display: table;
+    content: " ";
+    clear: both;
+  }
+  > * {
+    float: left;
+  }
+  .avatar {
+    margin: 0 1rem 0 0;
+  }
+
+  a {
+    color: #212529;
+  }
+
+  a:hover, a:focus {
+    color: #1f97bb;
+  }
+}
+
+/* BUTTONS */
+.goal__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 (1rem * -1) 0 0;
+
+  &::after {
+    display: table;
+    content: " ";
+    clear: both;
+  }
+
+  .goal__btn {
+    float: left;
+    margin: 0 1rem 1rem 0;
+    min-width: (1rem * 7);
+
+    .btn {
+      width: 100%;
+    }
+  }
+  .btn {
+    justify-content: center;
+  }
+}
+
+/* STATS */
+.goal__stats {
+  margin: 0 0 0 -1rem;
+
+  &::after {
+    display: table;
+    content: " ";
+    clear: both;
+  }
+
+  > div {
+    border-right: 1px solid grey;
+    color: grey;
+    float: left;
+    padding: 0 1rem;
+    white-space: nowrap;
+  }
+
+  > div:last-child {
+    border: none;
+  }
+}
+
+/* TAGS */
+.goal__tags {
+  &::after {
+    display: table;
+    content: " ";
+    clear: both;
+  }
+
+  .btn--tag {
+    float: left;
+    margin: 0 1rem 1rem 0;
+  }
+}
