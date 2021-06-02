@@ -1,0 +1,33 @@
+  <main class="main">
+    <div class="masthead">
+      <div class="content-wrapper">
+        <div class="masthead__text">
+
+        </div>
+      </div>
+    </div>
+    <div class="main__header">
+      <div class="content-wrapper">
+        <div class="masthead__text">
+            <h1 class="title-body" data-text="Found">My pin</h1>
+        </div>
+        <%= link_to  new_pin_path , class: 'btn btn--cta' do%>
+        <svg class="icon icon--cta" height="20" viewBox="0 0 24 24" width="20">
+            <use xlink:href="<%= asset_url("icons/icons-defs.svg" + "#add") %>"></use>
+          </svg>
+          Create New
+        <% end %>
+      </div>
+    </div>
+    <div class="main__content">
+      <div class="content-wrapper">
+        <ul class="bare-list cards">
+          <% @pins.each do |pin| %>
+            <li class="card">
+              <%= render partial: 'edit_pin_card', locals: { pin: pin} %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </main>
