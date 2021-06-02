@@ -1,0 +1,17 @@
+/* ==============================
+* BUTTONS
+================================= */
+.btn {
+  align-items: center;
+  background: #fafafa;
+  display: flex;
+  font-size: 1.3rem;
+  line-height: 1;
+  margin: 0;
+  justify-content: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all .1s ease;
+
+  cursor: pointer;
+}
