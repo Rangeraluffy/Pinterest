@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,600i,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  <title>Pinboard | About</title>
+</head>
+<body>
+  <header class="banner">
+    <div class="global-header">
+      <div class="content-wrapper">
+        <div class="logo">
+          <a class="logo" href="/"><span>Pin</span>Terest</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="masthead">
+      <div class="content-wrapper">
+        <div class="masthead__text">
+          <h1 class="sub-title-body">About</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="main__content">
+      <div class="content-wrapper">
+        <div class="about_text">
+
+          <p>Create an application that allows people to create a virtual pinboard for images and photos that they find online. It will be a similar but more basic experience to the popular website Pinterest website</p>
+          <h3>Objectives</h3>
+          <p>Implement the following features in your application, that allow:</p>
+          <ul>
+            <li>Visitors to open a simple static HTML page, about.html, that includes the title of the project option, a brief description of what the website is for and who built it. This page does not need to include any of the bootstrap styling indicated below.</li>
+            <li>Visitors to register and log in as a User with their :email using a basic sign up and log in form. Use a model named User for this task.</li>
+            <li>Users to create Pins that include a :title, an :image_url for the image that they want to “pin", and a :tag, which is a phrase or category relevant to the Pin. Use a model called Pin for this task. The Pin needs to be associated with the User that created it.</li>
+            <li>Visitors to view the six most-recently created Pins on the homepage / root path.</li>
+            <li>Visitors to search for Pins with a search term that will match on either :title or :tag from a form on the homepage. The form should submit in a way that the URL for any particular search can be copied and sent to others.</li>
+            <li>Visitors to view all of the details for a Pin plus all Comments related to that Pin on one view. The :title and :tag should be displayed as text and the :image_url used to display the image at that URL. This view will be linked from the individual Pins displayed on the search results view.</li>
+            <li>Users to edit all details of a Pin by clicking on a link from the “Show pin” view.</li>
+            <li>Users to save new or updated Pins only if a :title is provided i.e. :title is required, and that a :tag is no longer than 30 characters in length, although a :tag is optional. Any validation errors should be displayed helpfully for User.</li>
+            <li>Users to add a comment on a “show pin” view when they are signed in. Use a model named Comment for this task. The Comment needs to be associated with the Pin that it was created from and the User that created it.</li>
+            <li>Users to add any Pin created by any User to their "personal Pin list" from the show Pin view. It should not be possible to add a Pin more than once. Their personal Pin list should be available on a separate view, listing all of the Pins that they’ve saved. A link to the form to create a new Pin needs to be included on this view.</li>
+            <li>Visitors to have a link to the homepage, the about page, and the login/register view in the header of every view.</li>
+            <li>Users to have a link to the homepage, the about page, and their personal pin list in the header of every view.</li>
+          </ul>
+          <p>This application has been developped by Alexandre Marolleau</a> as a final
+            project for the course <em>Introduction to Ruby on Rails</em>. This is the third course of the EPFL Extension School.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="global-footer">
+    <div class="content-wrapper">
+      <div class="nav-footer">
+          <a class="logo" href="/"><span>Pin</span>Terest</a>
+      <p>2021 &copy;Alexandre Marolleau</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
