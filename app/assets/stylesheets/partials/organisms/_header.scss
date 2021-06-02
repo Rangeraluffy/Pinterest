@@ -1,0 +1,61 @@
+/* ==============================
+ * HEADER
+================================= */
+.banner {
+  color: #212529;
+  margin: 0;
+  padding: 0;
+
+}
+
+.global-header {
+  padding: 1rem 0;
+
+   .search {
+    float: left;
+    flex: 1 0 auto;
+    margin: 0 0 -1px 0;
+
+    @media screen and (min-width: 700px)  {
+        margin-right: 1rem;
+    }
+  }
+   .content-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+
+    &::after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+  }
+
+}
+
+.title-body {
+  font-size: 4vw;
+  color: #2525839;
+  text-align: center;
+  -webkit-text-stroke: 0.3vw;
+  text-transform: uppercase;
+}
+
+.title-bottom-body {
+  font-size: 2vw;
+  color: #2525839;
+  text-align: center;
+  -webkit-text-stroke: 0.1vw;
+  text-transform: uppercase;
+}
+
+.sub-title-body {
+  font-size: 2vw;
+  color: #363682;
+  padding: 3% 0%;
+  text-align: center;
+  -webkit-text-stroke: 0.1vw;
+  text-transform: uppercase;
+}
