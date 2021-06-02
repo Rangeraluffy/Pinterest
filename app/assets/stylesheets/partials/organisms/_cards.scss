@@ -1,0 +1,37 @@
+/* ==============================
+* CARDS
+================================= */
+
+.cards {
+  margin: 3rem -2rem 3rem 0;;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+
+  &::after {
+    display: table;
+    content: " ";
+    clear: both;
+  }
+  @include tablet {
+    justify-content: flex-start;
+  }
+
+  .card {
+    @include tablet {
+      float: left;
+      width: calc(50% - (3.1rem));
+    }
+  }
+}
+
+.card__title{
+  font-size: 4.5em;
+  font-weight: 800;
+}
+
+.card__tag{
+  font-size: 3.2em;
+  font-weight: 800;
+}
