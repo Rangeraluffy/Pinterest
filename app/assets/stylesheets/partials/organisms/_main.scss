@@ -1,0 +1,60 @@
+/* ==============================
+ * MAIN
+================================= */
+main {
+flex: 1 0 auto;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+
+  &--index h2 {
+    @include tablet {
+        text-align: center;
+    }
+  }
+
+  .content-wrapper {
+    flex: 1 0 auto;
+  }
+}
+
+/* MAIN HEADER */
+.main__header {
+  margin: 0 0 (2rem) 0;
+  width: 100vw;
+
+  .content-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    .btn {
+      align-self: center;
+    }
+  }
+}
+
+/* MAIN CONTENT */
+
+.main__content {
+
+  width: 100vw;
+  background-color: white;
+
+  p {
+    margin:  0;
+  }
+  ul {
+    padding:  0;
+  }
+
+  .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+}
