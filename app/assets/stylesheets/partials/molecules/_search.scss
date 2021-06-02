@@ -1,0 +1,42 @@
+/* ==============================
+ * SEARCH FORM
+================================= */
+
+.search {
+  font-size: 2.5rem;
+  color: #72797e;
+
+.search__label {
+    display: inline-block;
+    cursor: pointer;
+    margin-bottom: 0.5em;
+  }
+
+.search__field {
+    border: none;
+    border-radius: 50px;
+    padding-left: 1rem;
+    font-size: inherit;
+    margin: 0;
+  }
+
+.search__row {
+    background-color: #fff;
+    border: 1px solid grey;
+    display: flex;
+
+
+.search .btn {
+        border: none;
+      padding: 1.6em;
+    }
+  }
+
+.search__row .search__field {
+    flex: 1 0 10em;
+  }
+}
+
+.focus {
+  box-shadow: 0 0 5px #1f97bb;
+}
