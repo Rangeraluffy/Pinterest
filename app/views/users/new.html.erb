@@ -1,0 +1,33 @@
+  <main class="main">
+    <div class="main__header">
+      <div class="content-wrapper">
+        <h1 class="beta">Register or Login</h1>
+      </div>
+    </div>
+    <div class="main__content">
+      <div class="content-wrapper">
+        <% if @user.errors.any? %>
+          <div class="alert">
+            <% @user.errors.full_messages.each do |error| %>
+              <p> <%= error %> </p>
+            <% end %>
+          </div>
+        <% end %>
+        <div class="form__container form--login">
+          <%= form_for @user, html: {class: 'form'} do |f| %>
+              <div class="input">
+                <%= f.label :email, "Email", class: 'input__label'%>
+                <div>
+                  <%= f.email_field :email, class: 'input__field', placeholder: 'e.g. me@happy' %>
+                </div>
+              </div>
+              <div class="input__btn">
+                <div class="prompt">
+                  <%= f.submit 'Log in', class: 'btn btn--cta prompt__confirm'%>
+                </div>
+              </div>
+          <% end %>
+          </div>
+        </div>
+    </div>
+  </main>
