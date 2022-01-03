@@ -12,11 +12,11 @@ Create an application that allows people to create a virtual pinboard for images
 
 The outlines above don't go into as much detail as previous course projects: this is to assess your ability to interpret the project brief and create the appropriate models, controllers, views, and routes based on the guidelines below. In particular, the project submission must demonstrate all aspects of developing with the Ruby on Rails framework taught in this course.
 
-**Use of views, partials, and layouts**
-**Use of the Rails asset pipeline for CSS rules and image**
-**Use of the Rails router, including resources**
-**Use of controllers, controller actions and the application controller**
-**Use of models, associations, and validations**
-**Use of automated system and model tests**
-**Use of Active Record and database interactions**
-**Use of migrations and managing database table structures**
+- **Use of views, partials, and layouts**
+- **Use of the Rails asset pipeline for CSS rules and image**
+- **Use of the Rails router, including resources**
+- **Use of controllers, controller actions and the application controller**
+- **Use of models, associations, and validations**
+- **Use of automated system and model tests**
+- **Use of Active Record and database interactions**
+- **Use of migrations and managing database table structures**
